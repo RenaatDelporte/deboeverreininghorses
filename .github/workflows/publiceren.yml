@@ -1,0 +1,53 @@
+name: Website publiceren
+
+# Neemt de laatste versie van de testsite over en zet ze online.
+# Starten: tabblad Actions → "Website publiceren" → Run workflow.
+# Ook elke push naar main start deze stap.
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: publiceren
+  cancel-in-progress: false
+
+jobs:
+  publiceren:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Testsite ophalen
+        run: git clone --depth 1 https://github.com/RenaatDelporte/deboever-test.git /tmp/testsite
+
+      - name: Klaarmaken voor de echte website
+        run: bash scripts/overnemen-van-testsite.sh /tmp/testsite site
+
+      - name: Bewaren in de repository
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A site
+          if git diff --cached --quiet; then
+            echo "Geen wijzigingen ten opzichte van de vorige publicatie."
+          else
+            TEST=$(git -C /tmp/testsite rev-parse --short HEAD)
+            git commit -m "Testsite overgenomen (versie $TEST)"
+            git push
+          fi
+
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+      - id: deployment
+        uses: actions/deploy-pages@v4
