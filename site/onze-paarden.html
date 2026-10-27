@@ -161,7 +161,7 @@ section[id],article[id]{scroll-margin-top:24px}
 </div>
 </article>
 <article style="display: flex; flex-direction: column; gap: 18px">
-<button type="button" class="ph" data-gallery="oliver" aria-label="Bekijk 5 foto's van JJ Hip Hip Hoorah (Oliver)"><img src="assets/shoot-03.jpg" alt="JJ Hip Hip Hoorah (Oliver)" style="width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: center 30%; display: block"><span class="ph-badge">5 foto's</span></button>
+<button type="button" class="ph" data-gallery="oliver" aria-label="Bekijk 5 foto's van JJ Hip Hip Hoorah (Oliver)"><img src="assets/oliver-01.jpg" alt="JJ Hip Hip Hoorah (Oliver)" style="width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: center 30%; display: block"><span class="ph-badge">5 foto's</span></button>
 <div style="display: flex; flex-direction: column; gap: 6px; border-bottom: 1px solid rgba(242,235,221,0.25); padding-bottom: 18px">
 <h3 style="margin: 0; font-family: 'Cormorant Garamond', serif; font-weight: 500; font-size: 30px; line-height: 1.15">JJ Hip Hip Hoorah <em style="font-weight: 400; color: #D6C9B4">(Oliver)</em></h3>
 <span style="font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; color: #C9AD82">Ruin · 2022</span>
@@ -224,6 +224,14 @@ section[id],article[id]{scroll-margin-top:24px}
 <span style="font-size: 15px; color: #D6C9B4">[Afstamming]</span>
 </div>
 </article>
+<article style="display: flex; flex-direction: column; gap: 18px">
+<img src="assets/jules-01.jpg" alt="Jules" style="width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: 58% center; display: block">
+<div style="display: flex; flex-direction: column; gap: 6px; border-bottom: 1px solid rgba(242,235,221,0.25); padding-bottom: 18px">
+<h3 style="margin: 0; font-family: 'Cormorant Garamond', serif; font-weight: 500; font-size: 30px; line-height: 1.15">Jules</h3>
+<span style="font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; color: #C9AD82">[Geslacht · jaar]</span>
+<span style="font-size: 15px; color: #D6C9B4">[Afstamming]</span>
+</div>
+</article>
 </div>
 </div>
 </section>
@@ -249,6 +257,8 @@ section[id],article[id]{scroll-margin-top:24px}
 </div>
 </div>
 </section>
+
+
 
 
 
@@ -314,7 +324,7 @@ section[id],article[id]{scroll-margin-top:24px}
 
 </div>
 <script>
-(function(){var G={"chloe": {"title": "JJ Glitter N Gold (Chloé)", "photos": ["assets/shoot-07.jpg", "assets/shoot-08.jpg", "assets/shoot-09.jpg", "assets/shoot-10.jpg", "assets/paard-02.jpg"]}, "leonie": {"title": "GP Sixty Six Stars (Léonie)", "photos": ["assets/leonie-01.jpg", "assets/shoot-05.jpg", "assets/shoot-04.jpg"]}, "boef": {"title": "GP A Winning Face (Boef)", "photos": ["assets/boef-01.jpg", "assets/shoot-12.jpg", "assets/shoot-13.jpg", "assets/paard-01.jpg"]}, "oliver": {"title": "JJ Hip Hip Hoorah (Oliver)", "photos": ["assets/shoot-03.jpg", "assets/shoot-01.jpg", "assets/shoot-02.jpg", "assets/paard-05.jpg", "assets/paard-06.jpg"]}, "oscar": {"title": "Great Sun Of A Gun (Oscar)", "photos": ["assets/oscar-01.jpg", "assets/paard-07.jpg", "assets/paard-08.jpg"]}, "gucci": {"title": "GI Golden Gun (Gucci)", "photos": ["assets/gucci-02.jpg", "assets/paard-03.jpg"]}};var lb=document.getElementById('lb');if(!lb)return;var img=lb.querySelector('.lb-img'),cap=lb.querySelector('.lb-cap'),k=null,i=0,last=null;
+(function(){var G={"chloe": {"title": "JJ Glitter N Gold (Chloé)", "photos": ["assets/shoot-07.jpg", "assets/shoot-08.jpg", "assets/shoot-09.jpg", "assets/shoot-10.jpg", "assets/paard-02.jpg"]}, "leonie": {"title": "GP Sixty Six Stars (Léonie)", "photos": ["assets/leonie-01.jpg", "assets/shoot-05.jpg", "assets/shoot-04.jpg"]}, "boef": {"title": "GP A Winning Face (Boef)", "photos": ["assets/boef-01.jpg", "assets/shoot-12.jpg", "assets/shoot-13.jpg", "assets/paard-01.jpg"]}, "oliver": {"title": "JJ Hip Hip Hoorah (Oliver)", "photos": ["assets/oliver-01.jpg", "assets/shoot-03.jpg", "assets/shoot-01.jpg", "assets/paard-05.jpg", "assets/paard-06.jpg"]}, "oscar": {"title": "Great Sun Of A Gun (Oscar)", "photos": ["assets/oscar-01.jpg", "assets/paard-07.jpg", "assets/paard-08.jpg"]}, "gucci": {"title": "GI Golden Gun (Gucci)", "photos": ["assets/gucci-02.jpg", "assets/paard-03.jpg"]}};var lb=document.getElementById('lb');if(!lb)return;var img=lb.querySelector('.lb-img'),cap=lb.querySelector('.lb-cap'),k=null,i=0,last=null;
 function show(){var g=G[k];img.src=g.photos[i];img.alt=g.title+' – foto '+(i+1);cap.textContent=g.title+' · '+(i+1)+' / '+g.photos.length;}
 function open(key,btn){k=key;i=0;last=btn;show();lb.hidden=false;document.body.style.overflow='hidden';lb.querySelector('.lb-close').focus();}
 function close(){lb.hidden=true;document.body.style.overflow='';if(last)last.focus();}
