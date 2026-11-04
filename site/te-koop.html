@@ -18,6 +18,19 @@ a{color:#F2EBDD;text-decoration:none}
 a:hover{color:#D9BE94}
 *{box-sizing:border-box}
 .hero{background:linear-gradient(rgba(27,20,16,0.6),rgba(27,20,16,0.6)),url(assets/quarter-1.jpg) center 40%/cover no-repeat #4A3A2F}
+.ph{position:relative;display:block;width:100%;padding:0;border:0;background:none;cursor:zoom-in;overflow:hidden}
+.ph img{transition:transform .6s ease}
+.ph:hover img,.ph:focus-visible img{transform:scale(1.03)}
+.ph:focus-visible{outline:2px solid #C9AD82;outline-offset:3px}
+.ph-badge{position:absolute;right:12px;bottom:12px;padding:6px 12px;background:rgba(27,20,16,0.82);color:#F2EBDD;font-family:'Jost',sans-serif;font-size:11px;letter-spacing:0.2em;text-transform:uppercase}
+.lb{position:fixed;top:0;left:0;right:0;bottom:0;z-index:200;background:rgba(15,11,9,0.97);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:20px;padding:64px 16px 24px}
+.lb[hidden]{display:none}
+.lb-img{max-width:min(1200px,100%);max-height:calc(100vh - 170px);object-fit:contain;display:block}
+.lb-bar{display:flex;align-items:center;gap:24px;color:#F2EBDD;font-family:'Jost',sans-serif}
+.lb-cap{font-size:13px;letter-spacing:0.16em;text-transform:uppercase;text-align:center}
+.lb-btn{width:48px;height:48px;border:1px solid rgba(242,235,221,0.5);background:none;color:#F2EBDD;font-size:26px;line-height:1;cursor:pointer}
+.lb-btn:hover{border-color:#F2EBDD}
+.lb-close{position:absolute;top:16px;right:16px}
 .menu a{white-space:nowrap}
 .dd{position:relative}
 .dd .sub{display:none;position:absolute;top:100%;left:-24px;z-index:5;flex-direction:column;min-width:240px;padding:12px 24px;background:#1B1410;border:1px solid rgba(242,235,221,0.2)}
@@ -64,7 +77,7 @@ section[id],article[id]{scroll-margin-top:24px}
 <a href="index.html" style="padding: 12px 0">Home</a>
 <div class="dd"><a href="pensionstalling.html" style="padding: 12px 0; display: block">Pensionstalling <span aria-hidden="true" style="font-size: 9px">▾</span></a><div class="sub"><a href="pensionstalling.html#binnenstalling">Binnenstalling</a><a href="pensionstalling.html#buitenstalling">Buitenstalling</a><a href="pensionstalling.html#opfok-veulens">Opfok veulens</a><a href="pensionstalling.html#paarden-op-rust">Paarden op rust</a></div></div>
 <div class="dd"><a href="reining.html" style="padding: 12px 0; display: block">Reining <span aria-hidden="true" style="font-size: 9px">▾</span></a><div class="sub"><a href="reining.html#lessen-clinics">Lessen &amp; clinics</a><a href="reining.html#shows">Shows &amp; prestaties</a><a href="reining.html#kerstshow-2026">Kerstshow 2026</a></div></div>
-<div class="dd"><a href="onze-paarden.html" style="padding: 12px 0; display: block">Onze paarden <span aria-hidden="true" style="font-size: 9px">▾</span></a><div class="sub"><a href="onze-paarden.html#wedstrijdpaarden">Wedstrijdpaarden</a><a href="onze-paarden.html#fokmerries">Fokmerries</a><a href="onze-paarden.html#jonge-paarden">Jonge paarden in training</a><a href="onze-paarden.html#jaarlingen">Jaarlingen &amp; tweejarigen</a><a href="onze-paarden.html#veulens">Veulens</a><a href="onze-paarden.html#verwachte-veulens">Verwachte veulens</a><a href="te-koop.html">Te koop</a></div></div>
+<div class="dd"><a href="onze-paarden.html" style="padding: 12px 0; display: block">Onze paarden <span aria-hidden="true" style="font-size: 9px">▾</span></a><div class="sub"><a href="onze-paarden.html#wedstrijdpaarden">Wedstrijdpaarden</a><a href="onze-paarden.html#fokmerries">Fokmerries</a><a href="onze-paarden.html#jonge-paarden">Jonge paarden in training</a><a href="onze-paarden.html#jaarlingen">Jaarlingen &amp; tweejarigen</a><a href="onze-paarden.html#veulens">Veulens</a><a href="onze-paarden.html#verwachte-veulens">Verwachte veulens</a><a href="onze-paarden.html#voor-altijd-thuis">Voor altijd thuis</a><a href="te-koop.html">Te koop</a></div></div>
 <div class="dd"><a href="familie-de-boever.html" style="padding: 12px 0; display: block">Familie De Boever <span aria-hidden="true" style="font-size: 9px">▾</span></a><div class="sub"><a href="familie-de-boever.html#wie-zijn-wij">Wie zijn wij</a><a href="familie-de-boever.html#ons-team">Ons team</a></div></div>
 <a href="te-koop.html" aria-current="page" style="padding: 12px 0; border-bottom: 1px solid #C9AD82">Te koop</a>
 <a href="#contact" style="padding: 11px 24px; border: 1px solid #F2EBDD">Contact</a>
@@ -78,19 +91,43 @@ section[id],article[id]{scroll-margin-top:24px}
 </header>
 
 <section id="aanbod" style="padding: 110px 24px">
-<div style="max-width: 1240px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: center; gap: 48px 88px">
-<div style="flex: 1 1 420px; min-width: 0"><img src="assets/shoot-07.jpg" alt="JJ Glitter N Gold (Chloé)" style="width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: center 30%; display: block"></div>
-<article style="flex: 1 1 420px; display: flex; flex-direction: column; gap: 24px">
-<div style="font-size: 13px; letter-spacing: 0.34em; text-transform: uppercase; font-weight: 400; color: #C9AD82">Te koop</div>
-<h2 style="margin: 0; font-family: 'Cormorant Garamond', serif; font-weight: 400; font-size: clamp(38px, 4.4vw, 60px); line-height: 1.05">JJ Glitter N Gold <em style="font-weight: 400; color: #D6C9B4">(Chloé)</em></h2>
-<dl style="margin: 0; display: grid; grid-template-columns: max-content 1fr; border-top: 1px solid rgba(242,235,221,0.25); font-size: 16px">
-<dt style="padding: 12px 32px 12px 0; border-bottom: 1px solid rgba(242,235,221,0.15); font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; color: #C9AD82">Geslacht</dt><dd style="margin: 0; padding: 12px 0; border-bottom: 1px solid rgba(242,235,221,0.15)">Merrie</dd>
-<dt style="padding: 12px 32px 12px 0; border-bottom: 1px solid rgba(242,235,221,0.15); font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; color: #C9AD82">Geboren</dt><dd style="margin: 0; padding: 12px 0; border-bottom: 1px solid rgba(242,235,221,0.15)">2022</dd>
-<dt style="padding: 12px 32px 12px 0; border-bottom: 1px solid rgba(242,235,221,0.15); font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; color: #C9AD82">Afstamming</dt><dd style="margin: 0; padding: 12px 0; border-bottom: 1px solid rgba(242,235,221,0.15)">Ricochet Rooster × Spool Pop Chex (Smart Spook)</dd>
-<dt style="padding: 12px 32px 12px 0; border-bottom: 1px solid rgba(242,235,221,0.15); font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; color: #C9AD82">Prijs</dt><dd style="margin: 0; padding: 12px 0; border-bottom: 1px solid rgba(242,235,221,0.15)">Op aanvraag</dd>
-</dl>
-<a href="mailto:info@dbstables.be?subject=Interesse%20in%20JJ%20Glitter%20N%20Gold%20(Chlo%C3%A9)" style="align-self: flex-start; padding: 16px 34px; background: #F2EBDD; color: #241B16; font-size: 13px; letter-spacing: 0.22em; text-transform: uppercase; font-weight: 500">Interesse? Mail ons</a>
+<div style="max-width: 1240px; margin: 0 auto; display: flex; flex-direction: column; gap: 44px">
+<div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 16px 64px">
+<div style="display: flex; flex-direction: column; gap: 14px; flex: 1 1 420px">
+<div style="font-size: 13px; letter-spacing: 0.34em; text-transform: uppercase; font-weight: 400; color: #C9AD82">Recent verkocht</div>
+<h2 style="margin: 0; font-family: 'Cormorant Garamond', serif; font-weight: 400; font-size: clamp(34px, 4vw, 54px); line-height: 1.1">Een nieuwe thuis gevonden</h2>
+</div>
+<p style="margin: 0; flex: 1 1 380px; max-width: 480px; color: #E4DAC8">Deze paarden hebben een nieuwe eigenaar gevonden. Op zoek naar een paard? Mail ons gerust, we denken graag mee.</p>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 56px 32px">
+<!-- Verkocht november 2026: SOLD! blijft 6 maanden staan en verdwijnt automatisch na 2027-05-02 -->
+<article data-sold-until="2027-05-02" style="display: flex; flex-direction: column; gap: 18px">
+<div style="position: relative"><button type="button" class="ph" data-gallery="cloe" aria-label="Bekijk 2 foto's van JJ Glitter N Gold (Cloë)"><img src="assets/cloe-02.jpg" alt="JJ Glitter N Gold (Cloë)" style="width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: 38% center; display: block"><span class="ph-badge">2 foto's</span></button><span style="position: absolute; top: 20px; left: -8px; padding: 8px 18px; background: #8E2A1E; color: #F2EBDD; font-size: 13px; letter-spacing: 0.26em; text-transform: uppercase; font-weight: 500">Sold!</span></div>
+<div style="display: flex; flex-direction: column; gap: 6px; border-bottom: 1px solid rgba(242,235,221,0.25); padding-bottom: 18px">
+<h3 style="margin: 0; font-family: 'Cormorant Garamond', serif; font-weight: 500; font-size: 30px; line-height: 1.15">JJ Glitter N Gold <em style="font-weight: 400; color: #D6C9B4">(Cloë)</em></h3>
+<span style="font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; color: #C9AD82">Verkocht · november 2026</span>
+<span style="font-size: 15px; color: #D6C9B4">Merrie · 2022 · Ricochet Rooster × Spool Pop Chex (Smart Spook)</span>
+</div>
 </article>
+<!-- Verkocht september 2026: SOLD! blijft 6 maanden staan en verdwijnt automatisch na 2027-03-31 -->
+<article data-sold-until="2027-03-31" style="display: flex; flex-direction: column; gap: 18px">
+<div style="position: relative"><img src="assets/nic-01.jpg" alt="Es Nu Shine Nic (Nic)" style="width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: 60% center; display: block"><span style="position: absolute; top: 20px; left: -8px; padding: 8px 18px; background: #8E2A1E; color: #F2EBDD; font-size: 13px; letter-spacing: 0.26em; text-transform: uppercase; font-weight: 500">Sold!</span></div>
+<div style="display: flex; flex-direction: column; gap: 6px; border-bottom: 1px solid rgba(242,235,221,0.25); padding-bottom: 18px">
+<h3 style="margin: 0; font-family: 'Cormorant Garamond', serif; font-weight: 500; font-size: 30px; line-height: 1.15">Es Nu Shine Nic <em style="font-weight: 400; color: #D6C9B4">(Nic)</em></h3>
+<span style="font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; color: #C9AD82">Verkocht · september 2026</span>
+</div>
+</article>
+<!-- Verkocht augustus 2026: SOLD! blijft 6 maanden staan en verdwijnt automatisch na 2027-02-28 -->
+<article data-sold-until="2027-02-28" style="display: flex; flex-direction: column; gap: 18px">
+<div style="position: relative"><img src="assets/buck-01.jpg" alt="SR Wimpys Littlewhiz (Buck)" style="width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: 58% center; display: block"><span style="position: absolute; top: 20px; left: -8px; padding: 8px 18px; background: #8E2A1E; color: #F2EBDD; font-size: 13px; letter-spacing: 0.26em; text-transform: uppercase; font-weight: 500">Sold!</span></div>
+<div style="display: flex; flex-direction: column; gap: 6px; border-bottom: 1px solid rgba(242,235,221,0.25); padding-bottom: 18px">
+<h3 style="margin: 0; font-family: 'Cormorant Garamond', serif; font-weight: 500; font-size: 30px; line-height: 1.15">SR Wimpys Littlewhiz <em style="font-weight: 400; color: #D6C9B4">(Buck)</em></h3>
+<span style="font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; color: #C9AD82">Verkocht · augustus 2026</span>
+<span style="font-size: 15px; color: #D6C9B4">Met Viktor onder meer 3de in de Youth 13 &amp; Under op het EK 2026</span>
+</div>
+</article>
+</div>
+<p class="geen-aanbod" hidden style="margin: 0; padding: 40px 0; text-align: center; font-family: 'Cormorant Garamond', serif; font-size: 30px; color: #E4DAC8">Momenteel staan er geen paarden te koop. Mail ons gerust als u op zoek bent naar een paard.</p>
 </div>
 </section>
 
@@ -100,11 +137,18 @@ section[id],article[id]{scroll-margin-top:24px}
 <h2 style="margin: 0; font-family: 'Cormorant Garamond', serif; font-weight: 400; font-size: clamp(38px, 4.6vw, 64px); line-height: 1.1">Een paard komen bekijken?</h2>
 <p style="margin: 0; max-width: 520px; color: #54463A">Mail of bel ons voor meer info, video's of een afspraak op stal.</p>
 <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 16px; margin-top: 8px">
-<a href="mailto:info@dbstables.be?subject=Interesse%20in%20paard%20te%20koop" style="padding: 16px 34px; background: #241B16; color: #F2EBDD; font-size: 13px; letter-spacing: 0.22em; text-transform: uppercase; font-weight: 500">info@dbstables.be</a>
+<a href="mailto:info@dbreininghorses.be?subject=Interesse%20in%20paard%20te%20koop" style="padding: 16px 34px; background: #241B16; color: #F2EBDD; font-size: 13px; letter-spacing: 0.22em; text-transform: uppercase; font-weight: 500">info@dbreininghorses.be</a>
 <a href="tel:+32486621514" style="padding: 16px 34px; border: 1px solid #241B16; color: #241B16; font-size: 13px; letter-spacing: 0.22em; text-transform: uppercase; font-weight: 400">+32 486 62 15 14</a>
 </div>
 </div>
 </section>
+
+
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Foto's" hidden>
+<button type="button" class="lb-btn lb-close" aria-label="Sluiten">×</button>
+<img class="lb-img" src="" alt="">
+<div class="lb-bar"><button type="button" class="lb-btn lb-prev" aria-label="Vorige foto">‹</button><span class="lb-cap"></span><button type="button" class="lb-btn lb-next" aria-label="Volgende foto">›</button></div>
+</div>
 
 <footer style="width: 100%; box-sizing: border-box; background: #1B1410; color: #F2EBDD; font-family: 'Jost', sans-serif; font-weight: 300; font-size: 15px; line-height: 1.7; padding: 88px 24px 36px">
 <div style="max-width: 1240px; margin: 0 auto; display: flex; flex-direction: column; gap: 64px">
@@ -137,6 +181,7 @@ section[id],article[id]{scroll-margin-top:24px}
 <a href="onze-paarden.html#jaarlingen" style="color: #F2EBDD; text-decoration: none; padding: 5px 0">Jaarlingen &amp; tweejarigen</a>
 <a href="onze-paarden.html#veulens" style="color: #F2EBDD; text-decoration: none; padding: 5px 0">Veulens</a>
 <a href="onze-paarden.html#verwachte-veulens" style="color: #F2EBDD; text-decoration: none; padding: 5px 0">Verwachte veulens</a>
+<a href="onze-paarden.html#voor-altijd-thuis" style="color: #F2EBDD; text-decoration: none; padding: 5px 0">Voor altijd thuis</a>
 <a href="te-koop.html" style="color: #F2EBDD; text-decoration: none; padding: 5px 0">Te koop</a>
 </div>
 <div style="display: flex; flex-direction: column; gap: 6px">
@@ -147,7 +192,7 @@ section[id],article[id]{scroll-margin-top:24px}
 <div style="display: flex; flex-direction: column; gap: 6px">
 <div style="font-size: 12px; letter-spacing: 0.26em; text-transform: uppercase; color: #C9AD82; padding-bottom: 8px">Contact</div>
 <a href="tel:+32486621514" style="color: #F2EBDD; text-decoration: none; padding: 5px 0">+32 486 62 15 14</a>
-<a href="mailto:info@dbstables.be" style="color: #F2EBDD; text-decoration: none; padding: 5px 0">info@dbstables.be</a>
+<a href="mailto:info@dbreininghorses.be" style="color: #F2EBDD; text-decoration: none; padding: 5px 0">info@dbreininghorses.be</a>
 <a href="https://www.facebook.com/profile.php?id=100057367993883" style="color: #F2EBDD; text-decoration: none; padding: 5px 0">Facebook</a>
 <a href="https://instagram.com/deboeverstables" style="color: #F2EBDD; text-decoration: none; padding: 5px 0">Instagram</a>
 </div>
@@ -163,7 +208,24 @@ section[id],article[id]{scroll-margin-top:24px}
 </footer>
 
 </div>
-
+<script>
+(function(){var G={"cloe": {"title": "JJ Glitter N Gold (Cloë)", "photos": ["assets/cloe-02.jpg", "assets/cloe-01.jpg"]}};var lb=document.getElementById('lb');if(!lb)return;var img=lb.querySelector('.lb-img'),cap=lb.querySelector('.lb-cap'),k=null,i=0,last=null;
+function show(){var g=G[k];img.src=g.photos[i];img.alt=g.title+' – foto '+(i+1);cap.textContent=g.title+' · '+(i+1)+' / '+g.photos.length;}
+function open(key,btn){k=key;i=0;last=btn;show();lb.hidden=false;document.body.style.overflow='hidden';lb.querySelector('.lb-close').focus();}
+function close(){lb.hidden=true;document.body.style.overflow='';if(last)last.focus();}
+function step(d){var n=G[k].photos.length;i=(i+d+n)%n;show();}
+document.querySelectorAll('[data-gallery]').forEach(function(b){b.addEventListener('click',function(){open(b.getAttribute('data-gallery'),b);});});
+lb.querySelector('.lb-close').addEventListener('click',close);
+lb.querySelector('.lb-prev').addEventListener('click',function(){step(-1);});
+lb.querySelector('.lb-next').addEventListener('click',function(){step(1);});
+lb.addEventListener('click',function(e){if(e.target===lb)close();});
+document.addEventListener('keydown',function(e){if(lb.hidden)return;if(e.key==='Escape')close();else if(e.key==='ArrowLeft')step(-1);else if(e.key==='ArrowRight')step(1);});
+var sx=null;lb.addEventListener('touchstart',function(e){sx=e.touches[0].clientX;},{passive:true});lb.addEventListener('touchend',function(e){if(sx===null)return;var dx=e.changedTouches[0].clientX-sx;if(Math.abs(dx)>40)step(dx<0?1:-1);sx=null;});
+})();
+</script>
+<script>
+(function(){var t=new Date().toISOString().slice(0,10);document.querySelectorAll('[data-sold-until]').forEach(function(e){if(e.getAttribute('data-sold-until')<t)e.remove();});var g=document.querySelector('.geen-aanbod');if(g&&!document.querySelector('#aanbod [data-sold-until], #aanbod [data-te-koop]'))g.hidden=false;})();
+</script>
 <script>
 (function(){var v=document.querySelector('.hero video');if(!v)return;v.muted=true;
 if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){v.removeAttribute('autoplay');v.pause();return;}
