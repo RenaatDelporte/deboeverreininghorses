@@ -1,23 +1,37 @@
 <!doctype html>
-<html lang="nl">
+<html lang="nl-BE">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Familie De Boever | De Boever Reining Horses</title>
-<meta name="description" content="Maak kennis met de familie De Boever en ons team.">
-<meta property="og:title" content="Familie De Boever | De Boever Reining Horses">
-<meta property="og:description" content="Maak kennis met de familie De Boever en ons team.">
-<meta property="og:image" content="assets/binnenpiste.jpg">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<title>Familie De Boever en ons team | De Boever Reining Horses</title>
+<meta name="description" content="Maak kennis met de familie De Boever: Tom, Lynn, Lotte, Viktor en Léon. Eén familie, één passie: reining.">
+<meta property="og:title" content="Familie De Boever en ons team | De Boever Reining Horses">
+<meta property="og:description" content="Maak kennis met de familie De Boever: Tom, Lynn, Lotte, Viktor en Léon. Eén familie, één passie: reining.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="nl_BE">
+<meta property="og:site_name" content="De Boever Reining Horses">
+<meta name="twitter:card" content="summary_large_image">
+<meta property="og:image" content="assets/binnenpiste-og.jpg">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" href="favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="theme-color" content="#241B16">
+<link rel="preload" href="assets/fonts/jost-latin-300-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/cormorant-garamond-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 <style>
+@font-face{font-family:'Cormorant Garamond';font-style:normal;font-weight:400;font-display:swap;src:url(assets/fonts/cormorant-garamond-latin-400-normal.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Cormorant Garamond';font-style:italic;font-weight:400;font-display:swap;src:url(assets/fonts/cormorant-garamond-latin-400-italic.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Cormorant Garamond';font-style:normal;font-weight:500;font-display:swap;src:url(assets/fonts/cormorant-garamond-latin-500-normal.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Cormorant Garamond';font-style:italic;font-weight:500;font-display:swap;src:url(assets/fonts/cormorant-garamond-latin-500-italic.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Jost';font-style:normal;font-weight:300;font-display:swap;src:url(assets/fonts/jost-latin-300-normal.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Jost';font-style:normal;font-weight:400;font-display:swap;src:url(assets/fonts/jost-latin-400-normal.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Jost';font-style:normal;font-weight:500;font-display:swap;src:url(assets/fonts/jost-latin-500-normal.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
 html{scroll-behavior:smooth}
 body{margin:0;background:#241B16}
 a{color:#F2EBDD;text-decoration:none}
 a:hover{color:#D9BE94}
 *{box-sizing:border-box}
-.hero{background:linear-gradient(rgba(27,20,16,0.6),rgba(27,20,16,0.6)),url(assets/binnenpiste.jpg) center 35%/cover no-repeat #4A3A2F}
+.hero{background:linear-gradient(rgba(27,20,16,0.6),rgba(27,20,16,0.6)),url(assets/binnenpiste-gevel.webp) center 35%/cover no-repeat #4A3A2F}
 .menu a{white-space:nowrap}
 .dd{position:relative}
 .dd .sub{display:none;position:absolute;top:100%;left:-24px;z-index:5;flex-direction:column;min-width:240px;padding:12px 24px;background:#1B1410;border:1px solid rgba(242,235,221,0.2)}
@@ -58,7 +72,7 @@ section[id],article[id]{scroll-margin-top:24px}
 
 <header id="top" class="hero" style="position: relative; min-height: 560px; display: flex; flex-direction: column">
 <nav aria-label="Hoofdmenu" style="position: relative; z-index: 3; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px 40px; padding: 20px 56px; border-bottom: 1px solid rgba(242,235,221,0.25)">
-<a href="index.html" aria-label="De Boever Reining Horses – home" style="display: block; line-height: 0"><img src="assets/logo-deboever-wit.png" alt="De Boever Reining Horses" style="height: 92px; width: auto; display: block"></a>
+<a href="index.html" aria-label="De Boever Reining Horses – home" style="display: block; line-height: 0"><img src="assets/logo-deboever-wit.webp" alt="De Boever Reining Horses" style="height: 92px; width: auto; display: block"></a>
 <button type="button" class="burger" aria-label="Menu" aria-expanded="false" aria-controls="hoofdmenu"><span></span><span></span><span></span></button>
 <div class="menu" id="hoofdmenu" style="display: flex; flex-wrap: wrap; align-items: center; gap: 4px 32px; font-size: 13px; letter-spacing: 0.18em; text-transform: uppercase; font-weight: 400">
 <a href="index.html" style="padding: 12px 0">Home</a>
@@ -79,16 +93,14 @@ section[id],article[id]{scroll-margin-top:24px}
 
 <section id="wie-zijn-wij" style="padding: 110px 24px">
 <div style="max-width: 1240px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: center; gap: 48px 88px">
-<div style="flex: 1 1 420px; min-width: 0"><img src="assets/show-4.jpg" alt="Tom De Boever te paard in de showring" style="width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: center 25%; display: block"></div>
+<div style="flex: 1 1 420px; min-width: 0"><img loading="lazy" decoding="async" src="assets/tom-showring.webp" alt="Tom De Boever te paard in de showring" style="width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: center 25%; display: block"></div>
 <div style="flex: 1 1 420px; display: flex; flex-direction: column; gap: 24px">
 <div style="font-size: 13px; letter-spacing: 0.34em; text-transform: uppercase; font-weight: 400; color: #C9AD82">01 — Wie zijn wij</div>
-<h2 style="margin: 0; font-family: 'Cormorant Garamond', serif; font-weight: 400; font-size: clamp(34px, 4vw, 54px); line-height: 1.1">Een passie sinds onze kindertijd</h2>
-<blockquote style="margin: 0; padding-left: 24px; border-left: 1px solid #C9AD82; display: flex; flex-direction: column; gap: 10px">
-<p style="margin: 0; font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 26px; line-height: 1.35">“Paarden zijn al sinds onze kindertijd een passie, daarom krijgen ze hier alle liefde.”</p>
-<footer style="font-size: 12px; letter-spacing: 0.26em; text-transform: uppercase; color: #D6C9B4">Tom De Boever</footer>
-</blockquote>
-<p style="margin: 0; color: #E4DAC8; max-width: 540px">Wij zijn trots op onze gezellige en huiselijke sfeer, waarin we uitblinken tegenover grootschalige pensionstallingen. Bij ons zijn paarden thuis.</p>
-<p style="margin: 0; color: #E4DAC8; max-width: 540px">[HET VERHAAL VAN DE FAMILIE: sinds wanneer de stal bestaat, hoe het begon met reining, wie wat doet]</p>
+<h2 style="margin: 0; font-family: 'Cormorant Garamond', serif; font-weight: 400; font-size: clamp(34px, 4vw, 54px); line-height: 1.1">Eén familie. Eén passie. Reining.</h2>
+<p style="margin: 0; color: #E4DAC8; max-width: 540px">Wat in 2017 begon als een passie van Tom De Boever, groeide uit tot een verhaal dat de hele familie verbindt. Lynn volgde in 2020, dochter Lotte (16) in 2021 en zoon Viktor (12) in 2024. Ook de jongste telg, Léon (4), kreeg de paardenmicrobe al vroeg te pakken en zette op driejarige leeftijd zijn eerste stapjes met zijn eigen pony.</p>
+<p style="margin: 0; color: #E4DAC8; max-width: 540px">Bij familie De Boever zijn paarden veel meer dan een hobby. Ze maken deel uit van het dagelijkse leven. Van trainingen op stal tot wedstrijden in binnen- en buitenland: reining beleven ze samen.</p>
+<p style="margin: 0; font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 26px; line-height: 1.35; max-width: 540px; padding-left: 24px; border-left: 1px solid #C9AD82">Elkaars grootste supporters, verbonden door dezelfde passie.</p>
+<p style="margin: 0; color: #E4DAC8; max-width: 540px">Want bij De Boever Reining Horses draait het niet alleen om paarden en prestaties, maar vooral om familie, samen genieten en herinneringen maken.</p>
 </div>
 </div>
 </section>
@@ -99,24 +111,36 @@ section[id],article[id]{scroll-margin-top:24px}
 <div style="font-size: 13px; letter-spacing: 0.34em; text-transform: uppercase; font-weight: 400; color: #7A5C36">02 — Ons team</div>
 <h2 style="margin: 0; font-family: 'Cormorant Garamond', serif; font-weight: 400; font-size: clamp(34px, 4vw, 54px); line-height: 1.1">De mensen achter de paarden</h2>
 </div>
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 32px">
-<article id="lotte" style="display: flex; flex-direction: column; gap: 18px">
-<img src="assets/lotte.jpg" alt="Lotte beloont haar paard na de proef" style="width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: 58% center; display: block">
-<h3 style="margin: 0; font-family: 'Cormorant Garamond', serif; font-weight: 500; font-size: 38px; line-height: 1.1">Lotte</h3>
-<div style="font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; color: #7A5C36">[Rol] · rijdt met [naam paard]</div>
-<p style="margin: 0; font-size: 16px; color: #54463A">[KORTE VOORSTELLING: klasse, sinds wanneer, mooiste resultaat]</p>
-</article>
-<article id="viktor" style="display: flex; flex-direction: column; gap: 18px">
-<img src="assets/viktor.jpg" alt="Viktor in een sliding stop" style="width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: 58% center; display: block">
-<h3 style="margin: 0; font-family: 'Cormorant Garamond', serif; font-weight: 500; font-size: 38px; line-height: 1.1">Viktor</h3>
-<div style="font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; color: #7A5C36">[Rol] · rijdt met Thirty Eight Speshal (Timmy), eerder met SR Wimpys Littlewhiz (Buck)</div>
-<p style="margin: 0; font-size: 16px; color: #54463A">[KORTE VOORSTELLING: klasse, sinds wanneer, mooiste resultaat]</p>
-</article>
-<article id="tom" style="display: flex; flex-direction: column; gap: 18px">
-<img src="assets/tom.jpg" alt="Tom in de showring" style="width: 100%; aspect-ratio: 4 / 5; object-fit: cover; display: block">
+<div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 56px 32px">
+<article id="tom" style="flex: 1 1 300px; max-width: 392px; display: flex; flex-direction: column; gap: 18px">
+<img loading="lazy" decoding="async" src="assets/tom-showring-2.webp" alt="Tom in de showring" style="width: 100%; aspect-ratio: 4 / 5; object-fit: cover; display: block">
 <h3 style="margin: 0; font-family: 'Cormorant Garamond', serif; font-weight: 500; font-size: 38px; line-height: 1.1">Tom</h3>
-<div style="font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; color: #7A5C36">[Rol] · rijdt met [naam paard]</div>
-<p style="margin: 0; font-size: 16px; color: #54463A">[KORTE VOORSTELLING: klasse, sinds wanneer, mooiste resultaat]</p>
+<div style="display: flex; flex-direction: column; gap: 4px"><div style="font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; color: #7A5C36">Non Pro · reining sinds 2017</div></div>
+<p style="margin: 0; font-size: 16px; color: #54463A">De drijvende kracht achter De Boever Reining Horses. Zijn passie voor reining vormde het begin van een verhaal dat inmiddels door de hele familie wordt gedeeld.</p>
+</article>
+<article id="lynn" style="flex: 1 1 300px; max-width: 392px; display: flex; flex-direction: column; gap: 18px">
+<div role="img" aria-label="Foto van Lynn volgt" style="aspect-ratio: 4 / 5; background: #D5C9B3; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px"><span style="font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 44px; line-height: 1; color: #7A5C36">Lynn</span><span style="font-size: 11px; letter-spacing: 0.3em; text-transform: uppercase; color: #54463A">Foto volgt</span></div>
+<h3 style="margin: 0; font-family: 'Cormorant Garamond', serif; font-weight: 500; font-size: 38px; line-height: 1.1">Lynn</h3>
+<div style="display: flex; flex-direction: column; gap: 4px"><div style="font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; color: #7A5C36">Limited Non Pro · reining sinds 2020</div></div>
+<p style="margin: 0; font-size: 16px; color: #54463A">Sinds 2020 deelt Lynn de passie voor reining. Voor haar draait de sport niet alleen om prestaties, maar ook om het samen beleven van bijzondere momenten. Daarnaast verzorgt ze de sociale media van De Boever Reining Horses en zorgt ze ervoor dat het zowel de paarden als de ruiters aan niets ontbreekt.</p>
+</article>
+<article id="lotte" style="flex: 1 1 300px; max-width: 392px; display: flex; flex-direction: column; gap: 18px">
+<img loading="lazy" decoding="async" src="assets/lotte-beloning.webp" alt="Lotte beloont haar paard na de proef" style="width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: 58% center; display: block">
+<h3 style="margin: 0; font-family: 'Cormorant Garamond', serif; font-weight: 500; font-size: 38px; line-height: 1.1">Lotte</h3>
+<div style="display: flex; flex-direction: column; gap: 4px"><div style="font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; color: #7A5C36">Limited Non Pro · Intermediate Non Pro · Non Pro</div><div style="font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; color: #7A5C36">Reining sinds 2021</div></div>
+<p style="margin: 0; font-size: 16px; color: #54463A">Lotte vond in 2021 haar weg naar de reiningsport en is inmiddels actief op verschillende niveaus in de Non Pro. Een jonge amazone met een grote passie voor paarden. Daarnaast neemt ze met veel liefde en toewijding de verzorging van de paarden op zich. Hun welzijn en verzorging liggen haar nauw aan het hart.</p>
+</article>
+<article id="viktor" style="flex: 1 1 300px; max-width: 392px; display: flex; flex-direction: column; gap: 18px">
+<img loading="lazy" decoding="async" src="assets/viktor-sliding-stop.webp" alt="Viktor in een sliding stop" style="width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: 58% center; display: block">
+<h3 style="margin: 0; font-family: 'Cormorant Garamond', serif; font-weight: 500; font-size: 38px; line-height: 1.1">Viktor</h3>
+<div style="display: flex; flex-direction: column; gap: 4px"><div style="font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; color: #7A5C36">Rookie · reining sinds 2024</div><div style="font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; color: #7A5C36">Rijdt met Thirty Eight Speshal (Timmy), eerder met SR Wimpys Littlewhiz (Buck)</div></div>
+<p style="margin: 0; font-size: 16px; color: #54463A">Viktor stapte in 2024 mee in de wereld van reining. Als Rookie bouwt hij verder aan zijn ervaring en geniet hij volop van de sport.</p>
+</article>
+<article id="leon" style="flex: 1 1 300px; max-width: 392px; display: flex; flex-direction: column; gap: 18px">
+<img loading="lazy" decoding="async" src="assets/turbo-portret.webp" alt="Turbo, de pony van Léon" style="width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: center 25%; background: #000; display: block">
+<h3 style="margin: 0; font-family: 'Cormorant Garamond', serif; font-weight: 500; font-size: 38px; line-height: 1.1">Léon</h3>
+<div style="display: flex; flex-direction: column; gap: 4px"><div style="font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; color: #7A5C36">Jongste ruiter · rijdt sinds zijn derde</div><div style="font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; color: #7A5C36">Pony: Turbo</div></div>
+<p style="margin: 0; font-size: 16px; color: #54463A">De jongste telg van de familie en nu al een echte paardenliefhebber! Met zijn eigen pony Turbo zette hij op driejarige leeftijd zijn eerste stapjes in het zadel. Of hij nu op stal rondloopt, zijn pony vertroetelt of meegaat naar wedstrijden, Léon is er maar al te graag bij. Klein van stuk, maar met een minstens even grote passie voor paarden als de rest van de familie!</p>
 </article>
 </div>
 </div>
@@ -128,7 +152,8 @@ section[id],article[id]{scroll-margin-top:24px}
 <h2 style="margin: 0; font-family: 'Cormorant Garamond', serif; font-weight: 400; font-size: clamp(38px, 4.6vw, 64px); line-height: 1.1">Kom gerust eens langs</h2>
 <p style="margin: 0; max-width: 520px; color: #E4DAC8">Een stal bezoeken, een les boeken of gewoon een vraag? Bel of mail ons, we maken graag tijd.</p>
 <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 16px; margin-top: 8px">
-<a href="tel:+32486621514" style="padding: 16px 34px; background: #F2EBDD; color: #241B16; font-size: 13px; letter-spacing: 0.22em; text-transform: uppercase; font-weight: 500">+32 486 62 15 14</a>
+<a href="tel:+32493193542" style="padding: 11px 30px 13px; display: flex; flex-direction: column; align-items: center; gap: 2px; background: #F2EBDD; color: #241B16; font-size: 13px; letter-spacing: 0.22em; text-transform: uppercase; font-weight: 500"><span style="font-size: 10px; letter-spacing: 0.26em; opacity: 0.75">Lessen · Ernst</span><span>+32 493 19 35 42</span></a>
+<a href="tel:+32479796247" style="padding: 11px 30px 13px; display: flex; flex-direction: column; align-items: center; gap: 2px; background: #F2EBDD; color: #241B16; font-size: 13px; letter-spacing: 0.22em; text-transform: uppercase; font-weight: 500"><span style="font-size: 10px; letter-spacing: 0.26em; opacity: 0.75">Stalling · Lynn</span><span>+32 479 79 62 47</span></a>
 <a href="mailto:info@dbreininghorses.be" style="padding: 16px 34px; border: 1px solid #F2EBDD; font-size: 13px; letter-spacing: 0.22em; text-transform: uppercase; font-weight: 400">info@dbreininghorses.be</a>
 </div>
 </div>
@@ -137,7 +162,7 @@ section[id],article[id]{scroll-margin-top:24px}
 <footer style="width: 100%; box-sizing: border-box; background: #1B1410; color: #F2EBDD; font-family: 'Jost', sans-serif; font-weight: 300; font-size: 15px; line-height: 1.7; padding: 88px 24px 36px">
 <div style="max-width: 1240px; margin: 0 auto; display: flex; flex-direction: column; gap: 64px">
 <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 32px 64px">
-<a href="index.html" aria-label="De Boever Reining Horses – home" style="display: block; line-height: 0"><img src="assets/logo-deboever-wit.png" alt="De Boever Reining Horses" style="height: 132px; width: auto; display: block"></a>
+<a href="index.html" aria-label="De Boever Reining Horses – home" style="display: block; line-height: 0"><img src="assets/logo-deboever-wit.webp" alt="De Boever Reining Horses" style="height: 132px; width: auto; display: block"></a>
 <div style="display: flex; flex-direction: column; gap: 4px; font-size: 16px; color: #D6C9B4">
 <span style="font-family: 'Cormorant Garamond', serif; font-size: 26px; color: #F2EBDD">De Boever Reining Horses</span>
 <span>Nekkerstraat 3, 9520 Vlierzele</span>
@@ -175,17 +200,18 @@ section[id],article[id]{scroll-margin-top:24px}
 </div>
 <div style="display: flex; flex-direction: column; gap: 6px">
 <div style="font-size: 12px; letter-spacing: 0.26em; text-transform: uppercase; color: #C9AD82; padding-bottom: 8px">Contact</div>
-<a href="tel:+32486621514" style="color: #F2EBDD; text-decoration: none; padding: 5px 0">+32 486 62 15 14</a>
+<a href="tel:+32493193542" style="color: #F2EBDD; text-decoration: none; padding: 5px 0; display: flex; flex-direction: column; line-height: 1.45"><span style="font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: #B8AA94">Lessen · Ernst</span>+32 493 19 35 42</a>
+<a href="tel:+32479796247" style="color: #F2EBDD; text-decoration: none; padding: 5px 0; display: flex; flex-direction: column; line-height: 1.45"><span style="font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: #B8AA94">Stalling · Lynn</span>+32 479 79 62 47</a>
 <a href="mailto:info@dbreininghorses.be" style="color: #F2EBDD; text-decoration: none; padding: 5px 0">info@dbreininghorses.be</a>
 <a href="https://www.facebook.com/profile.php?id=100057367993883" style="color: #F2EBDD; text-decoration: none; padding: 5px 0">Facebook</a>
 <a href="https://instagram.com/deboeverstables" style="color: #F2EBDD; text-decoration: none; padding: 5px 0">Instagram</a>
 </div>
 </div>
 <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 32px; border-top: 1px solid rgba(242,235,221,0.2); padding-top: 24px; font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: #B8AA94">
-<span>© 2026 De Boever Reining Horses · BTW BE 0829.198.758</span>
+<span>© 2026 De Boever Reining Horses · btw BE 0829.198.758</span>
 <span style="display: flex; flex-wrap: wrap; gap: 4px 28px">
-<a href="#privacy" style="color: #B8AA94; text-decoration: none; padding: 12px 0">Privacybeleid</a>
-<a href="#cookies" style="color: #B8AA94; text-decoration: none; padding: 12px 0">Cookies</a>
+<a href="privacybeleid.html" style="color: #B8AA94; text-decoration: none; padding: 12px 0">Privacybeleid</a>
+<a href="privacybeleid.html#cookies" style="color: #B8AA94; text-decoration: none; padding: 12px 0">Cookies</a>
 </span>
 </div>
 </div>
