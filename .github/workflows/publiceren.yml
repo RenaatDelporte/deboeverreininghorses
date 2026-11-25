@@ -1,8 +1,12 @@
 name: Website publiceren
 
-# Neemt de laatste versie van de testsite over en zet ze online.
+# Neemt de laatste versie van de testsite over en zet ze online:
+#   - op dbreininghorses.be (webruimte bij one.com, via SFTP)
+#   - op GitHub Pages (reservekopie, verwijst met canonieke links naar dbreininghorses.be)
 # Starten: tabblad Actions → "Website publiceren" → Run workflow.
 # Ook elke push naar main start deze stap.
+# De stap naar one.com loopt pas als de geheimen SFTP_SERVER, SFTP_GEBRUIKER en
+# SFTP_WACHTWOORD ingevuld zijn (zie scripts/naar-one-com.sh).
 on:
   workflow_dispatch:
   push:
@@ -23,6 +27,11 @@ jobs:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
+    env:
+      SFTP_SERVER: ${{ secrets.SFTP_SERVER }}
+      SFTP_GEBRUIKER: ${{ secrets.SFTP_GEBRUIKER }}
+      SFTP_WACHTWOORD: ${{ secrets.SFTP_WACHTWOORD }}
+      SFTP_MAP: ${{ vars.SFTP_MAP }}
     steps:
       - uses: actions/checkout@v4
 
@@ -30,7 +39,7 @@ jobs:
         run: git clone --depth 1 https://github.com/RenaatDelporte/deboever-test.git /tmp/testsite
 
       - name: Klaarmaken voor de echte website
-        run: bash scripts/overnemen-van-testsite.sh /tmp/testsite site
+        run: bash scripts/overnemen-van-testsite.sh /tmp/testsite site https://dbreininghorses.be
 
       - name: Bewaren in de repository
         run: |
@@ -51,3 +60,14 @@ jobs:
           path: site
       - id: deployment
         uses: actions/deploy-pages@v4
+
+      - name: Op one.com zetten (dbreininghorses.be)
+        if: env.SFTP_WACHTWOORD != ''
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq lftp
+          bash scripts/naar-one-com.sh site
+
+      - name: Melding als one.com nog niet ingesteld is
+        if: env.SFTP_WACHTWOORD == ''
+        run: echo "::warning::De website staat alleen op GitHub Pages. Vul de geheimen SFTP_SERVER, SFTP_GEBRUIKER en SFTP_WACHTWOORD in om ze op dbreininghorses.be te zetten."
