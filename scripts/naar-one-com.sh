@@ -33,7 +33,8 @@ fi
 # Nieuwe servers van one.com: de website staat in webroots/<code> (zie one.com → Subdomeinen).
 # Alleen automatisch kiezen als er precies één map in webroots staat.
 if [ -z "${SFTP_MAP:-}" ] && grep -qx webroots <<<"$START"; then
-  WEBROOTS=$(lijst webroots | grep . || true)
+  # by-route is een hulpmap van one.com, geen website
+  WEBROOTS=$(lijst webroots | grep -vx 'by-route' | grep . || true)
   AANTAL=$(grep -c . <<<"$WEBROOTS" || true)
   if [ "$AANTAL" = 1 ]; then
     SFTP_MAP="webroots/$WEBROOTS"
