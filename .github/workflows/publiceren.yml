@@ -5,8 +5,9 @@ name: Website publiceren
 #   - op GitHub Pages (reservekopie, verwijst met canonieke links naar dbreininghorses.be)
 # Starten: tabblad Actions → "Website publiceren" → Run workflow.
 # Ook elke push naar main start deze stap.
-# De stap naar one.com loopt pas als de geheimen SFTP_SERVER, SFTP_GEBRUIKER en
-# SFTP_WACHTWOORD ingevuld zijn (zie scripts/naar-one-com.sh).
+# De stap naar one.com loopt pas als het geheim SFTP_WACHTWOORD ingevuld is.
+# Host en gebruikersnaam staan hieronder (uit one.com → SFTP & FTP); een geheim
+# SFTP_SERVER of SFTP_GEBRUIKER gaat voor (zie scripts/naar-one-com.sh).
 on:
   workflow_dispatch:
   push:
@@ -28,8 +29,8 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     env:
-      SFTP_SERVER: ${{ secrets.SFTP_SERVER }}
-      SFTP_GEBRUIKER: ${{ secrets.SFTP_GEBRUIKER }}
+      SFTP_SERVER: ${{ secrets.SFTP_SERVER || 'ssh.c63qju89y.service.one' }}
+      SFTP_GEBRUIKER: ${{ secrets.SFTP_GEBRUIKER || 'c63qju89y_ssh' }}
       SFTP_WACHTWOORD: ${{ secrets.SFTP_WACHTWOORD }}
       SFTP_MAP: ${{ vars.SFTP_MAP }}
     steps:
@@ -66,7 +67,7 @@ jobs:
 
       - name: Melding als one.com nog niet ingesteld is
         if: env.SFTP_WACHTWOORD == ''
-        run: echo "::warning::De website staat alleen op GitHub Pages. Vul de geheimen SFTP_SERVER, SFTP_GEBRUIKER en SFTP_WACHTWOORD in om ze op dbreininghorses.be te zetten."
+        run: echo "::warning::De website staat alleen op GitHub Pages. Vul het geheim SFTP_WACHTWOORD in om ze op dbreininghorses.be te zetten."
 
       # Reservekopie op GitHub Pages
       - uses: actions/configure-pages@v5

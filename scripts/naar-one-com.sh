@@ -1,10 +1,11 @@
 #!/usr/bin/env bash
 # Zet de map site/ via SFTP op de webruimte van dbreininghorses.be bij one.com.
 #
-# Nodig, als geheimen in GitHub (Settings → Secrets and variables → Actions):
-#   SFTP_SERVER      de host uit one.com → SSH & SFTP (bv. ssh.dbreininghorses.be)
-#   SFTP_GEBRUIKER   de gebruikersnaam uit one.com → SSH & SFTP (bv. dbreininghorses.be)
-#   SFTP_WACHTWOORD  het SFTP-wachtwoord dat je in one.com instelt
+# Nodig (de workflow vult ze in):
+#   SFTP_SERVER      host uit one.com → Hosting-instellingen → FTP (ssh.c63qju89y.service.one)
+#   SFTP_GEBRUIKER   gebruikersnaam uit dezelfde pagina (c63qju89y_ssh)
+#   SFTP_WACHTWOORD  het SFTP-wachtwoord, als geheim in GitHub
+#                    (Settings → Secrets and variables → Actions)
 # Optioneel, als variabele: SFTP_MAP, de publieke map op de server.
 # Zonder SFTP_MAP kiest het script httpd.www of www, wat er bestaat.
 #

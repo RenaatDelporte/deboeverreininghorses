@@ -12,10 +12,8 @@ Pas de bestanden in `site/` dus niet rechtstreeks aan: bij de volgende publicati
 
 ## Hosting
 
-- **dbreininghorses.be:** webruimte bij one.com. De publicatie zet `site/` er via SFTP op (`scripts/naar-one-com.sh`). Daarvoor moeten drie geheimen ingevuld zijn onder **Settings → Secrets and variables → Actions**:
-  - `SFTP_SERVER`: de host uit one.com → SSH & SFTP
-  - `SFTP_GEBRUIKER`: de gebruikersnaam uit one.com → SSH & SFTP
-  - `SFTP_WACHTWOORD`: het SFTP-wachtwoord dat je in one.com instelt
+- **dbreininghorses.be:** webruimte bij one.com. De publicatie zet `site/` er via SFTP op (`scripts/naar-one-com.sh`). Host (`ssh.c63qju89y.service.one`) en gebruikersnaam (`c63qju89y_ssh`) staan in de workflow; ze komen uit one.com → Hosting-instellingen → FTP. Alleen het wachtwoord moet als geheim ingevuld zijn onder **Settings → Secrets and variables → Actions**:
+  - `SFTP_WACHTWOORD`: het SFTP-wachtwoord dat je in one.com instelt (via de knop **Verzenden** op die pagina krijg je een mail om het in te stellen)
 - **GitHub Pages:** blijft als reservekopie meelopen op https://renaatdelporte.github.io/deboeverreininghorses/. Elke pagina verwijst met een canonieke link naar dbreininghorses.be, zodat Google alleen dat adres toont.
 
 Bij het overnemen maakt het script ook `sitemap.xml`, `robots.txt` en `.htaccess` (altijd https, zonder www) aan.
