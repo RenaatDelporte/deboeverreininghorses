@@ -57,13 +57,6 @@ jobs:
             git push
           fi
 
-      - uses: actions/configure-pages@v5
-      - uses: actions/upload-pages-artifact@v3
-        with:
-          path: site
-      - id: deployment
-        uses: actions/deploy-pages@v4
-
       - name: Op one.com zetten (dbreininghorses.be)
         if: env.SFTP_WACHTWOORD != ''
         run: |
@@ -74,3 +67,14 @@ jobs:
       - name: Melding als one.com nog niet ingesteld is
         if: env.SFTP_WACHTWOORD == ''
         run: echo "::warning::De website staat alleen op GitHub Pages. Vul de geheimen SFTP_SERVER, SFTP_GEBRUIKER en SFTP_WACHTWOORD in om ze op dbreininghorses.be te zetten."
+
+      # Reservekopie op GitHub Pages
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+      # GitHub vindt het pakket soms pas na enkele seconden terug
+      - name: Even wachten op GitHub
+        run: sleep 15
+      - id: deployment
+        uses: actions/deploy-pages@v4
