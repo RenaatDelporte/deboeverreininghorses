@@ -33,7 +33,10 @@ jobs:
       SFTP_WACHTWOORD: ${{ secrets.SFTP_WACHTWOORD }}
       SFTP_MAP: ${{ vars.SFTP_MAP }}
     steps:
+      # Altijd de nieuwste main, zodat ook een herstart (Re-run) kan bewaren
       - uses: actions/checkout@v4
+        with:
+          ref: main
 
       - name: Testsite ophalen
         run: git clone --depth 1 https://github.com/RenaatDelporte/deboever-test.git /tmp/testsite
