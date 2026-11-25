@@ -21,7 +21,8 @@ BRON="${1:?map met de website ontbreekt}"
 export LFTP_PASSWORD="$SFTP_WACHTWOORD"
 VERBINDEN="set cmd:fail-exit yes; set sftp:auto-confirm yes; set net:max-retries 2; set net:timeout 30; open --env-password -u \"$SFTP_GEBRUIKER\" sftp://$SFTP_SERVER"
 
-lijst() { lftp -c "$VERBINDEN; cd \"$1\"; cls -1" | sed 's#/$##'; }
+# cls -1 zet / achter mappen en @ achter snelkoppelingen: die tekens weghalen
+lijst() { lftp -c "$VERBINDEN; cd \"$1\"; cls -1" | sed 's#[/@]$##'; }
 
 START=$(lijst .)
 if [ -z "${SFTP_MAP:-}" ]; then
@@ -29,8 +30,22 @@ if [ -z "${SFTP_MAP:-}" ]; then
     if grep -qx "$m" <<<"$START"; then SFTP_MAP="$m"; break; fi
   done
 fi
+# Nieuwe servers van one.com: de website staat in webroots/<code> (zie one.com → Subdomeinen).
+# Alleen automatisch kiezen als er precies één map in webroots staat.
+if [ -z "${SFTP_MAP:-}" ] && grep -qx webroots <<<"$START"; then
+  WEBROOTS=$(lijst webroots | grep . || true)
+  AANTAL=$(grep -c . <<<"$WEBROOTS" || true)
+  if [ "$AANTAL" = 1 ]; then
+    SFTP_MAP="webroots/$WEBROOTS"
+  else
+    echo "Fout: webroots bevat $AANTAL mappen, ik weet niet welke de website is:" >&2
+    echo "$WEBROOTS" >&2
+    echo "Zet de juiste map (bv. webroots/abcd1234) als variabele SFTP_MAP in GitHub." >&2
+    exit 1
+  fi
+fi
 if [ -z "${SFTP_MAP:-}" ]; then
-  echo "Fout: geen map httpd.www of www gevonden op de server. Wat er staat:" >&2
+  echo "Fout: geen map httpd.www, www of webroots gevonden op de server. Wat er staat:" >&2
   echo "$START" >&2
   echo "Zet de juiste map als variabele SFTP_MAP in GitHub." >&2
   exit 1
